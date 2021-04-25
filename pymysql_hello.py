@@ -8,7 +8,7 @@ def main():
         with conn.cursor() as cursor: # 上下文语法否则需要    # cursor.close()
             cursor.execute('''drop table if exists pymysql''')
             cursor.execute(''' create table pymysql (a int,b int)''')
-            cursor.execute('''insert into pymysql(a,b) values(1,1)''')
+            cursor.execute('''insert into pymysql(a,b) values(1,1) ''')
         conn.commit()
     except pymysql.MySQLError as e:
         print(e)
